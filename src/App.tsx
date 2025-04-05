@@ -1,5 +1,19 @@
 import { Button } from "@/components/ui/button";
 
+import {
+  About,
+  // Cart,
+  // Checkout,
+  // Error,
+  // HomeLayout,
+  // Landing,
+  // Login,
+  // Orders,
+  // Products,
+  // Register,
+  // SingleProduct,
+} from "./pages";
+
 function App() {
   return (
     <div>
@@ -11,6 +25,7 @@ function App() {
       >
         Click Me
       </Button>
+      <About/>
     </div>
   );
 }
