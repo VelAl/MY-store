@@ -1,8 +1,13 @@
 export { CartButton } from "./CartButton";
 export { ErrorElement } from "./ErrorElement";
+export { FeaturedProducts } from "./FeaturedProducts";
 export { Header } from "./Header";
+export { Hero } from "./Hero";
+export { HeroCarousel } from "./HeroCarousel";
 export { LinksDropDown } from "./LinksDropDown";
 export { Logo } from "./Logo";
 export { ModeToggle } from "./ModeToggle";
 export { Navbar } from "./Navbar";
 export { NavLinks } from "./NavLinks";
+export { ProductsGrid } from "./ProductsGrid";
+export { SectionTitle } from "./SectionTitle";

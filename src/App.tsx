@@ -14,6 +14,7 @@ import {
   Register,
   SingleProduct,
 } from "./pages";
+import { landingPageLoader } from "./utils/loaders";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { index: true, element: <Landing /> },
-      { path: "about", element: <About />, errorElement: <ErrorElement /> },
+      {
+        path: "about",
+        element: <About />,
+        errorElement: <ErrorElement />,
+        loader: landingPageLoader,
+      },
       { path: "cart", element: <Cart />, errorElement: <ErrorElement /> },
       {
         path: "checkout",
