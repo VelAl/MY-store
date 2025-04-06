@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { Moon, Sun } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -10,17 +8,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { appThemeSelector, setTheme } from "@/features/theme/themeSlice";
-import { useAppDispatch } from "@/hooks";
-import { applyTheme, appThemes } from "@/utils";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { appThemes } from "@/utils";
 
 export const ModeToggle = () => {
   const dispatch = useAppDispatch();
 
-  const currentTheme = useSelector(appThemeSelector);
-
-  useEffect(() => {
-    applyTheme(currentTheme); // apply saved theme after first render (reload the page)
-  }, []);
+  const currentTheme = useAppSelector(appThemeSelector);
 
   return (
     <DropdownMenu>
