@@ -11,7 +11,7 @@ export const NavLinks = () => {
           to={href}
           className={({ isActive }) =>
             `capitalize font-light tracking-wide ${
-              isActive ? "text-primary" : ""
+              isActive ? "text-primary underline decoration-2" : ""
             }`
           }
         >

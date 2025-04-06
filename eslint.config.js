@@ -34,6 +34,8 @@ export default tseslint.config(
         },
       ],
       "simple-import-sort/exports": "warn",
+      allowEmptyCatch: "off",
+      "react-hooks/exhaustive-deps": "off",
     },
   }
 );

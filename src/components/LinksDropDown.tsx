@@ -30,7 +30,7 @@ export const LinksDropDown = () => {
             <NavLink
               to={href}
               className={({ isActive }) =>
-                `capitalize w-full ${isActive ? "text-primary" : ""}`
+                `capitalize w-full ${isActive ? "text-primary underline decoration-2" : ""}`
               }
             >
               {label}
