@@ -22,12 +22,11 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     errorElement: <Error />,
     children: [
-      { index: true, element: <Landing /> },
+      { index: true, element: <Landing />, loader: landingPageLoader },
       {
         path: "about",
         element: <About />,
         errorElement: <ErrorElement />,
-        loader: landingPageLoader,
       },
       { path: "cart", element: <Cart />, errorElement: <ErrorElement /> },
       {
