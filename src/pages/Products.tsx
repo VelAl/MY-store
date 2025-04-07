@@ -1,3 +1,13 @@
+import { type LoaderFunction } from "react-router-dom";
+
+import { Filters, PaginationContainer, ProductsContainer } from "@/components";
+
 export const Products = () => {
-  return <h1 className="text-4xl">Products Page</h1>;
+  return (
+    <>
+      <Filters />
+      <ProductsContainer />
+      <PaginationContainer />
+    </>
+  );
 };

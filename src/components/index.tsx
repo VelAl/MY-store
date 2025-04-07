@@ -1,6 +1,7 @@
 export { CartButton } from "./CartButton";
 export { ErrorElement } from "./ErrorElement";
 export { FeaturedProducts } from "./FeaturedProducts";
+export { Filters } from "./Filters";
 export { Header } from "./Header";
 export { Hero } from "./Hero";
 export { HeroCarousel } from "./HeroCarousel";
@@ -9,5 +10,8 @@ export { Logo } from "./Logo";
 export { ModeToggle } from "./ModeToggle";
 export { Navbar } from "./Navbar";
 export { NavLinks } from "./NavLinks";
+export { PaginationContainer } from "./PaginationContainer";
+export { ProductsContainer } from "./ProductsContainer";
 export { ProductsGrid } from "./ProductsGrid";
+export { ProductsList } from "./ProductsList";
 export { SectionTitle } from "./SectionTitle";
