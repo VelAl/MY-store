@@ -1,19 +1,18 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useSearchParams } from "react-router-dom";
 
+import { FormInput } from "./FormInput";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
 
 export const Filters = () => {
+  const [searchParams] = useSearchParams();
+  const search = searchParams.get("search") || "";
+
   return (
     <Form
       className="border rounded-md px-8 py-4 grid gap-x-4 gap-y-4 sm:grid-cols-2 md:grid-cols-3
                  lg:grid-cols-4 items-center"
     >
-      <div className="mb-2">
-        <Label htmlFor="search">Search product</Label>
-        <Input id="search" name="search" type="text" defaultValue="" />
-      </div>
+      <FormInput label="Search product" name="search" defaultValue={search} />
       <Button type="submit" size="sm" className="self-end mb-2">
         Search
       </Button>

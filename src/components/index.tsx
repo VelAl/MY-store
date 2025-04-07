@@ -2,6 +2,7 @@ export { CartButton } from "./CartButton";
 export { ErrorElement } from "./ErrorElement";
 export { FeaturedProducts } from "./FeaturedProducts";
 export { Filters } from "./Filters";
+export { FormInput } from "./FormInput";
 export { Header } from "./Header";
 export { Hero } from "./Hero";
 export { HeroCarousel } from "./HeroCarousel";
