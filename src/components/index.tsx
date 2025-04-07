@@ -6,6 +6,7 @@ export { Header } from "./Header";
 export { Hero } from "./Hero";
 export { HeroCarousel } from "./HeroCarousel";
 export { LinksDropDown } from "./LinksDropDown";
+export { Loading } from "./Loading";
 export { Logo } from "./Logo";
 export { ModeToggle } from "./ModeToggle";
 export { Navbar } from "./Navbar";
