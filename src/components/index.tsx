@@ -3,6 +3,7 @@ export { ErrorElement } from "./ErrorElement";
 export { FeaturedProducts } from "./FeaturedProducts";
 export { Filters } from "./Filters";
 export { FormInput } from "./FormInput";
+export { FormRange } from "./FormRange";
 export { FormSelect } from "./FormSelect";
 export { Header } from "./Header";
 export { Hero } from "./Hero";

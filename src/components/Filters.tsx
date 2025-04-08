@@ -3,6 +3,7 @@ import { Form, Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { T_ProductsResponse } from "@/utils";
 
 import { FormInput } from "./FormInput";
+import { FormRange } from "./FormRange";
 import { FormSelect } from "./FormSelect";
 import { Button } from "./ui/button";
 
@@ -15,6 +16,7 @@ export const Filters = () => {
   const category = searchParams.get("category") || undefined;
   const company = searchParams.get("company") || undefined;
   const order = searchParams.get("order") || undefined;
+  const price = searchParams.get("price") || undefined;
 
   return (
     <Form
@@ -40,6 +42,7 @@ export const Filters = () => {
         defaultValue={order}
         options={sortOptions}
       />
+      <FormRange name={"price"} defaultValue={price} />
       <Button type="submit" size="sm" className="self-end mb-2">
         Apply filters
       </Button>
