@@ -5,14 +5,13 @@ import { formatAsDollars } from "@/utils";
 
 import { Slider } from "./ui/slider";
 
-type FormRangeProps = {
+type T_Props = {
   name: string;
   label?: string;
   defaultValue?: string;
 };
 
-const FormRange: FC<FormRangeProps> = ({ name, label, defaultValue }) => {
-  const step = 1000;
+export const FormRange: FC<T_Props> = ({ name, label, defaultValue }) => {
   const maxPrice = 1e5;
   const defaultPrice = defaultValue ? +defaultValue : maxPrice;
 
@@ -26,7 +25,7 @@ const FormRange: FC<FormRangeProps> = ({ name, label, defaultValue }) => {
       <Slider
         id={name}
         name={name}
-        step={step}
+        step={1000}
         max={maxPrice}
         className="mt-4 mb-1"
         value={[selectedPrice]}
@@ -35,5 +34,3 @@ const FormRange: FC<FormRangeProps> = ({ name, label, defaultValue }) => {
     </div>
   );
 };
-
-export { FormRange };

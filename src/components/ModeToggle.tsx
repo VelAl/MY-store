@@ -8,8 +8,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { appThemeSelector, setTheme } from "@/features/theme/themeSlice";
-import { useAppDispatch, useAppSelector } from "@/hooks";
 import { appThemes } from "@/utils";
+import { useAppDispatch, useAppSelector } from "@/utils/hooks";
 
 export const ModeToggle = () => {
   const dispatch = useAppDispatch();

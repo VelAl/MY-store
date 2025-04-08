@@ -1,7 +1,9 @@
-import { Form, Link, useLoaderData, useSearchParams } from "react-router-dom";
+import { Form, Link, useLoaderData } from "react-router-dom";
 
 import { T_ProductsResponse } from "@/utils";
+import { useFilterFormSearchParams } from "@/utils/hooks";
 
+import { FormCheckbox } from "./FormCheckbox";
 import { FormInput } from "./FormInput";
 import { FormRange } from "./FormRange";
 import { FormSelect } from "./FormSelect";
@@ -11,38 +13,42 @@ const sortOptions = ["a-z", "z-a", "high", "low"];
 
 export const Filters = () => {
   const { meta } = useLoaderData() as T_ProductsResponse;
-  const [searchParams] = useSearchParams();
-  const search = searchParams.get("search") || "";
-  const category = searchParams.get("category") || undefined;
-  const company = searchParams.get("company") || undefined;
-  const order = searchParams.get("order") || undefined;
-  const price = searchParams.get("price") || undefined;
+  const searchParams = useFilterFormSearchParams();
 
   return (
     <Form
       className="border rounded-md px-8 py-4 grid gap-x-4 gap-y-4 sm:grid-cols-2 md:grid-cols-3
                  lg:grid-cols-4 items-center"
     >
-      <FormInput label="Search product" name="search" defaultValue={search} />
+      <FormInput
+        label="Search product"
+        name="search"
+        defaultValue={searchParams.search || ""}
+      />
       <FormSelect
         name="category"
         label="Select category"
-        defaultValue={category}
+        defaultValue={searchParams.category}
         options={meta.categories}
       />
       <FormSelect
         name="company"
         label="Select company"
-        defaultValue={company}
+        defaultValue={searchParams.company}
         options={meta.companies}
       />
       <FormSelect
         name="order"
         label="Sort by"
-        defaultValue={order}
+        defaultValue={searchParams.order}
         options={sortOptions}
       />
-      <FormRange name={"price"} defaultValue={price} />
+      <FormRange name={"price"} defaultValue={searchParams.price} />
+      <FormCheckbox
+        name="shipping"
+        label="Free shipping"
+        defaultValue={searchParams.shipping}
+      />
       <Button type="submit" size="sm" className="self-end mb-2">
         Apply filters
       </Button>

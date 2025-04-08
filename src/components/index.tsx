@@ -2,6 +2,7 @@ export { CartButton } from "./CartButton";
 export { ErrorElement } from "./ErrorElement";
 export { FeaturedProducts } from "./FeaturedProducts";
 export { Filters } from "./Filters";
+export { FormCheckbox } from "./FormCheckbox";
 export { FormInput } from "./FormInput";
 export { FormRange } from "./FormRange";
 export { FormSelect } from "./FormSelect";
