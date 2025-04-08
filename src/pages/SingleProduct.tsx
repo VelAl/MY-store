@@ -45,8 +45,16 @@ export const SingleProduct = () => {
           </p>
           <p className="mt-6 leading-8">{description}</p>
 
-          <SelectProductColor />
-          <SelectProductQnt />
+          <SelectProductColor
+            colors={colors}
+            color={color}
+            setColor={setColor}
+          />
+          <SelectProductQnt
+            amount={qnt}
+            mode="singleProduct"
+            setAmount={setQnt}
+          />
           <Button size="lg" className="mt-8" onClick={addToCart}>
             Add to cart
           </Button>
