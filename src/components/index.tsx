@@ -20,3 +20,5 @@ export { ProductsContainer } from "./ProductsContainer";
 export { ProductsGrid } from "./ProductsGrid";
 export { ProductsList } from "./ProductsList";
 export { SectionTitle } from "./SectionTitle";
+export { SelectProductColor } from "./SelectProductColor";
+export { SelectProductQnt } from "./SelectProductQnt";
