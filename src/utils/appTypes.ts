@@ -31,3 +31,27 @@ export type T_Pagination = Record<
   "page" | "pageCount" | "pageSize" | "total",
   number
 >;
+
+
+//_______CART____________________
+export type T_CartItem = {
+  cartID: string;
+  productID: number;
+  image: string;
+  title: string;
+  price: string;
+  amount: number;
+  productColor: string;
+  company: string;
+};
+
+export type T_CartState = {
+  cartItems: T_CartItem[];
+  numItemsInCart: number;
+  cartTotal: number;
+  shipping: number;
+  tax: number;
+  orderTotal: number;
+};
+
+export const localStorageCartKey = 'MY-store cart'

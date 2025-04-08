@@ -1,11 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { applyTheme, localStorageThemeKey, T_Theme } from "@/utils";
+import {
+  applyTheme,
+  getLocalStorageItem,
+  localStorageThemeKey,
+  setLocalStorageItem,
+  T_Theme,
+} from "@/utils";
 
 type T_InitialState = { name: T_Theme };
 
 const savedTheme: T_Theme =
-  (localStorage.getItem(localStorageThemeKey) as T_Theme) || "system";
+  getLocalStorageItem<T_Theme>(localStorageThemeKey) || "system";
 
 applyTheme(savedTheme); // applies saved theme when the app is set
 
@@ -18,7 +24,7 @@ const themeSlice = createSlice({
     setTheme(state, { payload }: PayloadAction<T_Theme>) {
       state.name = payload;
       applyTheme(payload);
-      localStorage.setItem(localStorageThemeKey, payload);
+      setLocalStorageItem(localStorageThemeKey, payload);
     },
   },
   selectors: {
