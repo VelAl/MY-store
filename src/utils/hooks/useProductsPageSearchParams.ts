@@ -9,7 +9,7 @@ const fieldsNames = [
   "shipping",
 ] as const;
 
-export const useFilterFormSearchParams = () => {
+export const useProductsPageSearchParams = () => {
   const result = {} as {
     [k in (typeof fieldsNames)[number]]: string | undefined;
   };

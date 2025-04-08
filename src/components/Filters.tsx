@@ -1,7 +1,7 @@
 import { Form, Link, useLoaderData } from "react-router-dom";
 
 import { T_ProductsResponse } from "@/utils";
-import { useFilterFormSearchParams } from "@/utils/hooks";
+import { useProductsPageSearchParams } from "@/utils/hooks";
 
 import { FormCheckbox } from "./FormCheckbox";
 import { FormInput } from "./FormInput";
@@ -13,7 +13,7 @@ const sortOptions = ["a-z", "z-a", "high", "low"];
 
 export const Filters = () => {
   const { meta } = useLoaderData() as T_ProductsResponse;
-  const searchParams = useFilterFormSearchParams();
+  const searchParams = useProductsPageSearchParams();
 
   return (
     <Form

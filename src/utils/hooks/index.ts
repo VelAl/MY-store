@@ -1,2 +1,2 @@
 export * from "./reduxHooks";
-export * from "./useFilterFormSearchParams";
+export * from "./useProductsPageSearchParams";
