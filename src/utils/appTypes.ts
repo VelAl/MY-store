@@ -1,3 +1,5 @@
+//
+//_______PRODUCT____________________
 export type T_ProductsResponse = {
   data: T_Product[];
   meta: T_ProductsMeta;
@@ -32,7 +34,6 @@ export type T_Pagination = Record<
   number
 >;
 
-
 //_______CART____________________
 export type T_CartItem = {
   cartID: string;
@@ -54,4 +55,17 @@ export type T_CartState = {
   orderTotal: number;
 };
 
-export const localStorageCartKey = 'MY-store cart'
+export const localStorageCartKey = "cart";
+
+//_______USER____________________
+export type T_User = {
+  userName: string;
+  jwt: string;
+};
+
+export type T_UserState = {
+  user: T_User | null;
+};
+
+export const demoUserName = "demo user";
+export const localStorageUserKey = "user";

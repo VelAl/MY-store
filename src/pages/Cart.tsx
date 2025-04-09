@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { CartItemsList, CartTotals, SectionTitle } from "@/components";
 import { Button } from "@/components/ui/button";
 import { cartSelector } from "@/features/cart/cartSlice";
+import { userSelector } from "@/features/user/userSlice";
 import { appPaths } from "@/utils";
 import { useAppSelector } from "@/utils/hooks";
 
 export const Cart = () => {
-  const user = null;
+  const user = useAppSelector(userSelector);
   const { numItemsInCart } = useAppSelector(cartSelector);
 
   if (!numItemsInCart) {
