@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 import { CartItemsList, CartTotals, SectionTitle } from "@/components";
 import { Button } from "@/components/ui/button";
-import { numItemsInCartSelector } from "@/features/cart/cartSlice";
+import { cartSelector } from "@/features/cart/cartSlice";
 import { appPaths } from "@/utils";
 import { useAppSelector } from "@/utils/hooks";
 
 export const Cart = () => {
   const user = null;
-  const numItemsInCart = useAppSelector(numItemsInCartSelector);
+  const { numItemsInCart } = useAppSelector(cartSelector);
 
   if (!numItemsInCart) {
     return <SectionTitle text="Your cart is currently empty." />;
@@ -17,7 +17,7 @@ export const Cart = () => {
   return (
     <>
       <SectionTitle text="Shopping cart" />
-      <div className="mt-8 grid gap-8 lg: grid-cols-12">
+      <div className="mt-8 grid gap-8 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <CartItemsList />
         </div>

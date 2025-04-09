@@ -8,13 +8,23 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-type T_Props = {
-  mode: "singleProduct" | "cartItem";
+type T_PropsSingle = {
+  mode: "singleProduct";
   amount: number;
   setAmount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export const SelectProductQnt: FC<T_Props> = ({ amount, mode, setAmount }) => {
+type T_PropsCart = {
+  mode: "cartItem";
+  amount: number;
+  setAmount: (qnt: number) => void;
+};
+
+export const SelectProductQnt: FC<T_PropsSingle | T_PropsCart> = ({
+  amount,
+  mode,
+  setAmount,
+}) => {
   const isCart = mode === "cartItem";
   const length = isCart ? amount + 10 : 10;
 
@@ -30,7 +40,9 @@ export const SelectProductQnt: FC<T_Props> = ({ amount, mode, setAmount }) => {
 
           <SelectContent>
             {Array.from({ length }, (_, i) => (
-              <SelectItem key={i} value={`${i + 1}`}>{i + 1}</SelectItem>
+              <SelectItem key={i} value={`${i + 1}`}>
+                {i + 1}
+              </SelectItem>
             ))}
           </SelectContent>
         </SelectTrigger>

@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
 
-import { numItemsInCartSelector } from "@/features/cart/cartSlice";
+import { cartSelector } from "@/features/cart/cartSlice";
 import { appPaths } from "@/utils";
 import { useAppSelector } from "@/utils/hooks";
 
 import { Button } from "./ui/button";
 
 export const CartButton = () => {
-  const numItemsInCart = useAppSelector(numItemsInCartSelector);
+  const { numItemsInCart } = useAppSelector(cartSelector);
+  
   return (
     <Button
       asChild
