@@ -4,18 +4,34 @@ import { Link, useLoaderData } from "react-router-dom";
 import { SelectProductColor, SelectProductQnt } from "@/components";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { formatAsDollars, T_Product } from "@/utils";
+import { addItem } from "@/features/cart/cartSlice";
+import { formatAsDollars, type T_Product } from "@/utils";
+import { useAppDispatch } from "@/utils/hooks";
 
 export const SingleProduct = () => {
+  const dispatch = useAppDispatch();
+
   const {
+    id,
     attributes: { colors, company, description, image, price, title },
   } = useLoaderData() as T_Product;
 
-  const [color, setColor] = useState(colors[0]);
   const [qnt, setQnt] = useState(1);
+  const [color, setColor] = useState(colors[0]);
 
   const addToCart = () => {
-    console.log(color, qnt);
+    dispatch(
+      addItem({
+        image,
+        title,
+        price,
+        company,
+        amount: qnt,
+        productID: id,
+        cartID: id + color,
+        productColor: color,
+      })
+    );
   };
 
   return (

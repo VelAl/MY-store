@@ -15,7 +15,7 @@ export const HomeLayout = () => {
         {navigation.state === "loading" ? <Loading /> : <Outlet />}
       </div>
 
-      <Toaster />
+      <Toaster position="top-right" richColors/>
     </div>
   );
 };
