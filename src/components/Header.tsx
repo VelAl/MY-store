@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { appPaths } from "@/utils";
+
 import { Button } from "./ui/button";
 
 export const Header = () => {
@@ -30,11 +32,11 @@ export const Header = () => {
         ) : (
           <div className="flex gap-x-6 justify-center items-center -mr-4">
             <Button asChild variant="link" size="sm">
-              <Link to="/login">Sign in / Guest</Link>
+              <Link to={appPaths.login}>Sign in / Guest</Link>
             </Button>
 
             <Button asChild variant="link" size="sm">
-              <Link to="/register">Register</Link>
+              <Link to={appPaths.register}>Register</Link>
             </Button>
           </div>
         )}

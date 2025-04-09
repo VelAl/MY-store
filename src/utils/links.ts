@@ -1,3 +1,5 @@
+import { appPaths } from "./appPaths";
+
 type Link = {
   href: string;
   label: string;
@@ -5,9 +7,9 @@ type Link = {
 
 export const links: Link[] = [
   { href: "/", label: "home" },
-  { href: "about", label: "about" },
-  { href: "products", label: "products" },
-  { href: "cart", label: "cart" },
-  { href: "checkout", label: "checkout" },
-  { href: "orders", label: "orders" },
+  { href: appPaths.about, label: "about" },
+  { href: appPaths.products, label: "products" },
+  { href: appPaths.cart, label: "cart" },
+  { href: appPaths.checkout, label: "checkout" },
+  { href: appPaths.orders, label: "orders" },
 ];

@@ -1,4 +1,6 @@
 export { CartButton } from "./CartButton";
+export { CartItemsList } from "./CartItemsList";
+export { CartTotals } from "./CartTotals";
 export { ErrorElement } from "./ErrorElement";
 export { FeaturedProducts } from "./FeaturedProducts";
 export { Filters } from "./Filters";

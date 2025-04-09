@@ -14,6 +14,7 @@ import {
   Register,
   SingleProduct,
 } from "./pages";
+import { appPaths } from "./utils";
 import {
   landingPageLoader,
   productsPageLoader,
@@ -28,35 +29,51 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Landing />, loader: landingPageLoader },
       {
-        path: "about",
+        path: appPaths.about,
         element: <About />,
         errorElement: <ErrorElement />,
       },
-      { path: "cart", element: <Cart />, errorElement: <ErrorElement /> },
       {
-        path: "checkout",
+        path: appPaths.cart,
+        element: <Cart />,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: appPaths.checkout,
         element: <Checkout />,
         errorElement: <ErrorElement />,
       },
-      { path: "error", element: <Error />, errorElement: <ErrorElement /> },
-      { path: "landing", element: <Landing />, errorElement: <ErrorElement /> },
-      { path: "orders", element: <Orders />, errorElement: <ErrorElement /> },
       {
-        path: "products",
+        path: appPaths.error,
+        element: <Error />,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: appPaths.landing,
+        element: <Landing />,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: appPaths.orders,
+        element: <Orders />,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: appPaths.products,
         element: <Products />,
         errorElement: <ErrorElement />,
         loader: productsPageLoader,
       },
       {
-        path: "products/:id",
+        path: `${appPaths.products}/:id`,
         element: <SingleProduct />,
         errorElement: <ErrorElement />,
         loader: singleProductLoader,
       },
     ],
   },
-  { path: "/login", element: <Login />, errorElement: <Error /> },
-  { path: "/register", element: <Register />, errorElement: <Error /> },
+  { path: appPaths.login, element: <Login />, errorElement: <Error /> },
+  { path: appPaths.register, element: <Register />, errorElement: <Error /> },
 ]);
 
 function App() {

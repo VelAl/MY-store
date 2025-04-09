@@ -5,7 +5,7 @@ import { SelectProductColor, SelectProductQnt } from "@/components";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { addItem } from "@/features/cart/cartSlice";
-import { formatAsDollars, type T_Product } from "@/utils";
+import { appPaths, formatAsDollars, type T_Product } from "@/utils";
 import { useAppDispatch } from "@/utils/hooks";
 
 export const SingleProduct = () => {
@@ -42,7 +42,7 @@ export const SingleProduct = () => {
         </Button>
         <Separator orientation="vertical" />
         <Button asChild variant="link" size="sm">
-          <Link to="/products">Products</Link>
+          <Link to={appPaths.products}>Products</Link>
         </Button>
       </div>
 

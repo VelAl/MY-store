@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { appPaths } from "@/utils";
+
 import { HeroCarousel } from "./HeroCarousel";
 import { Button } from "./ui/button";
 
@@ -17,7 +19,7 @@ export const Hero = () => {
           facilis animi dolore!
         </p>
         <Button asChild size="lg" className="mt-10">
-          <Link to="./products">Our products</Link>
+          <Link to={appPaths.products}>Our products</Link>
         </Button>
       </div>
       <HeroCarousel />

@@ -1,6 +1,6 @@
 import { Form, Link, useLoaderData } from "react-router-dom";
 
-import { T_ProductsResponse } from "@/utils";
+import { appPaths, T_ProductsResponse } from "@/utils";
 import { useProductsPageSearchParams } from "@/utils/hooks";
 
 import { FormCheckbox } from "./FormCheckbox";
@@ -59,7 +59,7 @@ export const Filters = () => {
         variant="secondary"
         className="self-end mb-2 border"
       >
-        <Link to="/products">reset</Link>
+        <Link to={appPaths.products}>reset</Link>
       </Button>
     </Form>
   );

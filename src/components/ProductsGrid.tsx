@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { formatAsDollars, type T_ProductsResponse } from "@/utils";
+import { appPaths, formatAsDollars, type T_ProductsResponse } from "@/utils";
 
 export const ProductsGrid = () => {
   const { data: products } = useLoaderData() as T_ProductsResponse;
@@ -9,7 +9,7 @@ export const ProductsGrid = () => {
   return (
     <div className="pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {products.map(({ attributes: { image, title, price }, id }) => (
-        <Link key={id} to={`/products/${id}`}>
+        <Link key={id} to={`${appPaths.products}/${id}`}>
           <Card>
             <CardContent className="p-4">
               <img

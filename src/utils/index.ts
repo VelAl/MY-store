@@ -1,4 +1,5 @@
 export * from "./applyTheme";
+export * from "./appPaths";
 export * from "./appTypes";
 export * from "./fetcher";
 export * from "./formatAsDollars";
