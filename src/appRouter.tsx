@@ -16,6 +16,7 @@ import {
 } from "./pages";
 import { appPaths } from "./utils";
 import {
+  checkoutFormAction,
   landingPageLoader,
   loginRequest,
   productsPageLoader,
@@ -44,6 +45,7 @@ export const router = createBrowserRouter([
         path: appPaths.checkout,
         element: <Checkout />,
         errorElement: <ErrorElement />,
+        action: checkoutFormAction,
       },
       {
         path: appPaths.error,

@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 
-import { appPaths, formatAsDollars, type T_ProductsResponse } from "@/utils";
+import { appPaths, formatAsDollars, T_ProductsResponse } from "@/utils";
 
 import { Card, CardContent } from "./ui/card";
 

@@ -69,3 +69,13 @@ export type T_UserState = {
 
 export const demoUserName = "demo user";
 export const localStorageUserKey = "user";
+
+//_______CHECKOUT________________
+export type T_Checkout = {
+  name: string;
+  address: string;
+  chargeTotal: number;
+  orderTotal: string;
+  cartItems: T_CartItem[];
+  numItemsInCart: number;
+};

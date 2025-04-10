@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { LayoutGrid, List } from "lucide-react";
 
-import { type T_ProductsResponse } from "@/utils";
+import { T_ProductsResponse } from "@/utils";
 
 import { ProductsGrid } from "./ProductsGrid";
 import { ProductsList } from "./ProductsList";

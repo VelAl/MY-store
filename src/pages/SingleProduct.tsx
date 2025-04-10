@@ -5,7 +5,7 @@ import { SelectProductColor, SelectProductQnt } from "@/components";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { addItem } from "@/features/cart/cartSlice";
-import { appPaths, formatAsDollars, type T_Product } from "@/utils";
+import { appPaths, formatAsDollars, T_Product } from "@/utils";
 import { useAppDispatch } from "@/utils/hooks";
 
 export const SingleProduct = () => {
