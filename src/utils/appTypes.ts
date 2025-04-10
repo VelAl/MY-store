@@ -59,7 +59,7 @@ export const localStorageCartKey = "cart";
 
 //_______USER____________________
 export type T_User = {
-  userName: string;
+  username: string;
   jwt: string;
 };
 

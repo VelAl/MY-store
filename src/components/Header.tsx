@@ -1,27 +1,24 @@
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { logout, userSelector } from "@/features/user/userSlice";
 import { appPaths } from "@/utils";
+import { useAppDispatch, useAppSelector } from "@/utils/hooks";
 
 import { Button } from "./ui/button";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
-  // temp
-  const [user, setUser] = useState<{ username: string } | null>({
-    username: "demo user",
-  });
+  const user = useAppSelector(userSelector);
   const handleLogout = () => {
-    setUser(null);
-    navigate("/");
+    dispatch(logout());
+    navigate(appPaths.login);
   };
 
   return (
     <header>
       <div className="align-element flex justify-center sm:justify-end py-2">
-        {/* // USER  */}
-
         {user ? (
           <div className="flex gap-x-2 sm:gap-x-8 items-center">
             <p className="text-xs sm:text-sm">Hello, {user.username}!</p>

@@ -1,12 +1,31 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 import { FormInput, SubmitBtn } from "@/components";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { saveUser } from "@/features/user/userSlice";
 import { appPaths } from "@/utils";
+import { useAppDispatch } from "@/utils/hooks";
+import { loginAsGuestRequest } from "@/utils/requests";
 
 export const Login = () => {
-  const loginAsGuest = () => {};
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const loginAsGuest = async (): Promise<void> => {
+    try {
+      const { username, jwt } = await loginAsGuestRequest();
+
+      dispatch(saveUser({ username, jwt }));
+      navigate("/");
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Something went wrong...";
+
+      toast.error("Login failed...", { description: message });
+    }
+  };
 
   return (
     <section className="h-screen grid place-items-center">

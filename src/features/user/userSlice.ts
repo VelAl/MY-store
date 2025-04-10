@@ -22,7 +22,7 @@ const userSlice = createSlice({
       state.user = payload;
       setLocalStorageItem(localStorageUserKey, payload);
 
-      const isDemo = payload.userName === demoUserName;
+      const isDemo = payload.username === demoUserName;
       toast.success(isDemo ? "Welcome Guest User!" : "Login successfull!");
     },
 
