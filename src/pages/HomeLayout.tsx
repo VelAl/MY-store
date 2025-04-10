@@ -1,7 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
 
 import { Header, Loading, Navbar } from "@/components";
-import { Toaster } from "@/components/ui/sonner";
 
 export const HomeLayout = () => {
   const navigation = useNavigation();
@@ -14,8 +13,6 @@ export const HomeLayout = () => {
       <div className="align-element py-20">
         {navigation.state === "loading" ? <Loading /> : <Outlet />}
       </div>
-
-      <Toaster richColors duration={4000} />
     </div>
   );
 };
