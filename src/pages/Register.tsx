@@ -15,21 +15,10 @@ export const Register = () => {
 
         <CardContent>
           <Form method="post" className="flex flex-col gap-2">
-            <FormInput className="bg-white" label="name" name="username" />
-            <FormInput
-              className="bg-white"
-              type="email"
-              label="email"
-              name="email"
-            />
-            <FormInput
-              className="bg-white"
-              type="password"
-              label="password"
-              name="password"
-            />
-            <SubmitBtn   className="w-full mt-2 "/>
-
+            <FormInput label="name" name="username" />
+            <FormInput type="email" label="email" name="email" />
+            <FormInput type="password" label="password" name="password" />
+            <SubmitBtn className="w-full mt-2 " />
 
             <p className="text-center">
               Already a member ?{" "}
