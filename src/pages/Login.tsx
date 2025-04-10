@@ -18,7 +18,7 @@ export const Login = () => {
       const { username, jwt } = await loginAsGuestRequest();
 
       dispatch(saveUser({ username, jwt }));
-      navigate("/");
+      navigate(appPaths.home);
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "Something went wrong...";

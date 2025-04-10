@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { AlignLeft } from "lucide-react";
 
-import { links } from "@/utils";
+import { useLinks } from "@/utils/hooks";
 
 import { Button } from "./ui/button";
 import {
@@ -12,6 +12,8 @@ import {
 } from "./ui/dropdown-menu";
 
 export const LinksDropDown = () => {
+  const links = useLinks();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="lg:hidden">

@@ -3,6 +3,7 @@ import { ActionFunction, redirect } from "react-router-dom";
 import { saveUser } from "@/features/user/userSlice";
 import { store } from "@/redux-store";
 
+import { appPaths } from "../appPaths";
 import { errorHandler } from "../errorHandler";
 import { fetcher } from "../fetcher";
 
@@ -21,7 +22,7 @@ export const loginRequest: ActionFunction = async ({
     const { jwt } = resp.data;
 
     store.dispatch(saveUser({ username, jwt }));
-    return redirect("/");
+    return redirect(appPaths.home);
   } catch (err) {
     errorHandler(err);
 

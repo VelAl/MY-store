@@ -1,6 +1,7 @@
 import { isRouteErrorResponse, Link, useRouteError } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
+import { appPaths } from "@/utils";
 
 export const Error = () => {
   const error = useRouteError();
@@ -15,7 +16,7 @@ export const Error = () => {
           </h1>
           <div className="mt-8">
             <Button asChild size="lg">
-              <Link to="/">Go back home</Link>
+              <Link to={appPaths.home}>Go back home</Link>
             </Button>
           </div>
         </div>

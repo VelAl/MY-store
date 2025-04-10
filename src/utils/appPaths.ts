@@ -1,4 +1,5 @@
 export const appPaths = {
+  home: "/",
   about: "/about",
   cart: "/cart",
   checkout: "/checkout",

@@ -38,7 +38,7 @@ export const SingleProduct = () => {
     <section>
       <div className="flex gap-x-2 h-6 items-center">
         <Button asChild variant="link" size="sm">
-          <Link to="/">Home</Link>
+          <Link to={appPaths.home}>Home</Link>
         </Button>
         <Separator orientation="vertical" />
         <Button asChild variant="link" size="sm">
