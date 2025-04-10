@@ -18,8 +18,9 @@ import { appPaths } from "./utils";
 import {
   landingPageLoader,
   productsPageLoader,
+  registerRequest,
   singleProductLoader,
-} from "./utils/loaders";
+} from "./utils/requests";
 
 const router = createBrowserRouter([
   {
@@ -73,7 +74,12 @@ const router = createBrowserRouter([
     ],
   },
   { path: appPaths.login, element: <Login />, errorElement: <Error /> },
-  { path: appPaths.register, element: <Register />, errorElement: <Error /> },
+  {
+    path: appPaths.register,
+    element: <Register />,
+    errorElement: <Error />,
+    action: registerRequest,
+  },
 ]);
 
 function App() {

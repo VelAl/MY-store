@@ -15,7 +15,9 @@ export const FormInput: FC<T_Props> = ({
   ...rest
 }) => (
   <div className="mb-2">
-    <Label htmlFor={name} className="mb-1">{label}</Label>
+    <Label htmlFor={name} className="mb-1 capitalize ml-1">
+      {label}
+    </Label>
     <Input id={rest.id || name} name={name} type={type} {...rest} />
   </div>
 );

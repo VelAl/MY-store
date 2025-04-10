@@ -24,7 +24,7 @@ export const FormSelect: FC<T_SelectProps> = ({
 }) => {
   return (
     <div className="mb-2">
-      <Label htmlFor={name} className="capitalize mb-1">
+      <Label htmlFor={name} className="capitalize mb-1 ml-1">
         {label || name}
       </Label>
       <Select name={name} defaultValue={defaultValue || options[0]}>

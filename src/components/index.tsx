@@ -24,3 +24,4 @@ export { ProductsList } from "./ProductsList";
 export { SectionTitle } from "./SectionTitle";
 export { SelectProductColor } from "./SelectProductColor";
 export { SelectProductQnt } from "./SelectProductQnt";
+export { SubmitBtn } from "./SubmitBtn";
