@@ -9,6 +9,8 @@ import {
   type T_CartState,
 } from "@/utils";
 
+import { logout } from "../user/userSlice";
+
 const initialState: T_CartState = {
   cartItems: [],
   numItemsInCart: 0,
@@ -37,7 +39,7 @@ const cartSlice = createSlice({
 
       cartSlice.caseReducers.calculateTotals(state);
 
-      toast.success("Succsess!", {
+      toast.success("Success!", {
         description: "The Item has been added to the cart.",
       });
     },
@@ -80,6 +82,12 @@ const cartSlice = createSlice({
 
       setLocalStorageItem(localStorageCartKey, state);
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(logout, () => {
+      localStorage.removeItem(localStorageCartKey);
+      return initialState;
+    });
   },
   selectors: {
     cartSelector: (state) => state,

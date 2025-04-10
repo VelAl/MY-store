@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 import { logout, userSelector } from "@/features/user/userSlice";
 import { appPaths } from "@/utils";
@@ -12,8 +13,9 @@ export const Header = () => {
 
   const user = useAppSelector(userSelector);
   const handleLogout = () => {
-    dispatch(logout());
-    navigate(appPaths.login);
+    dispatch(logout()); // clears cart, if any, via extra reducers
+    navigate('/');
+    toast.info('Logged Out')
   };
 
   return (
