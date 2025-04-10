@@ -1,9 +1,10 @@
 import { ActionFunction, redirect } from "react-router-dom";
-import { AxiosError } from "axios";
 import { toast } from "sonner";
 
 import { appPaths } from "../appPaths";
+import { errorHandler } from "../errorHandler";
 import { fetcher } from "../fetcher";
+
 
 export const registerRequest: ActionFunction = async ({
   request,
@@ -18,14 +19,7 @@ export const registerRequest: ActionFunction = async ({
 
     return redirect(appPaths.login);
   } catch (error) {
-    const message =
-      error instanceof AxiosError
-        ? error.response?.data.error.message
-        : error instanceof Error
-        ? error.message
-        : "Something went wrong...";
-
-    toast.error(message);
+    errorHandler(error);
     return null;
   }
 };
