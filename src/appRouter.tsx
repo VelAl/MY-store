@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import { ErrorElement } from "./components";
 import {
@@ -17,12 +17,13 @@ import {
 import { appPaths } from "./utils";
 import {
   landingPageLoader,
+  loginRequest,
   productsPageLoader,
   registerRequest,
   singleProductLoader,
 } from "./utils/requests";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
@@ -73,7 +74,12 @@ const router = createBrowserRouter([
       },
     ],
   },
-  { path: appPaths.login, element: <Login />, errorElement: <Error /> },
+  {
+    path: appPaths.login,
+    element: <Login />,
+    errorElement: <Error />,
+    action: loginRequest,
+  },
   {
     path: appPaths.register,
     element: <Register />,
@@ -81,8 +87,3 @@ const router = createBrowserRouter([
     action: registerRequest,
   },
 ]);
-
-function App() {
-  return <RouterProvider router={router} />;
-}
-export default App;
