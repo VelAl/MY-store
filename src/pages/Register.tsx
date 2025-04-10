@@ -28,9 +28,8 @@ export const Register = () => {
               label="password"
               name="password"
             />
-            <Button type="submit" variant="default" className="w-full mt-2">
-              Submit
-            </Button>
+            <SubmitBtn   className="w-full mt-2 "/>
+
 
             <p className="text-center">
               Already a member ?{" "}
