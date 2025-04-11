@@ -1,10 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 
-import {
-  ComplexPaginationContainer,
-  OrdersList,
-  SectionTitle,
-} from "@/components";
+import { OrdersList, PaginationContainer, SectionTitle } from "@/components";
 import { T_OrdersResponse } from "@/utils";
 import { useUnloggedRedirect } from "@/utils/hooks";
 
@@ -21,7 +17,7 @@ export const Orders = () => {
     <>
       <SectionTitle text="Your orders" />
       <OrdersList />
-      <ComplexPaginationContainer />
+      <PaginationContainer />
     </>
   );
 };
