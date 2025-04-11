@@ -1,5 +1,7 @@
 # E-Commerce Web Application
 
+> ⚠️ This is a pet project built for learning and practicing modern web development tools and techniques.
+
 ## Overview
 
 A modern, responsive e-commerce web application designed for seamless user experience across all device sizes.  
