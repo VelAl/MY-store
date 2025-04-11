@@ -42,7 +42,5 @@ export const checkoutFormAction: ActionFunction = async ({
     errorHandler(err);
   }
 
-  console.log(data);
-
   return null;
 };

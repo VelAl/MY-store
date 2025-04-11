@@ -19,6 +19,7 @@ import {
   checkoutFormAction,
   landingPageLoader,
   loginRequest,
+  ordersPageloader,
   productsPageLoader,
   registerRequest,
   singleProductLoader,
@@ -42,12 +43,6 @@ export const router = createBrowserRouter([
         errorElement: <ErrorElement />,
       },
       {
-        path: appPaths.checkout,
-        element: <Checkout />,
-        errorElement: <ErrorElement />,
-        action: checkoutFormAction,
-      },
-      {
         path: appPaths.error,
         element: <Error />,
         errorElement: <ErrorElement />,
@@ -55,11 +50,6 @@ export const router = createBrowserRouter([
       {
         path: appPaths.landing,
         element: <Landing />,
-        errorElement: <ErrorElement />,
-      },
-      {
-        path: appPaths.orders,
-        element: <Orders />,
         errorElement: <ErrorElement />,
       },
       {
@@ -73,6 +63,18 @@ export const router = createBrowserRouter([
         element: <SingleProduct />,
         errorElement: <ErrorElement />,
         loader: singleProductLoader,
+      },
+      {
+        path: appPaths.checkout,
+        element: <Checkout />,
+        errorElement: <ErrorElement />,
+        action: checkoutFormAction,
+      },
+      {
+        path: appPaths.orders,
+        element: <Orders />,
+        errorElement: <ErrorElement />,
+        loader: ordersPageloader,
       },
     ],
   },

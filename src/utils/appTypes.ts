@@ -79,3 +79,27 @@ export type T_Checkout = {
   cartItems: T_CartItem[];
   numItemsInCart: number;
 };
+
+//_______ORDER___________________
+export type T_Order = {
+  id: number;
+  attributes: {
+    address: string;
+    cartItems: T_CartItem[];
+    createdAt: string;
+    name: string;
+    numItemsInCart: number;
+    orderTotal: string;
+    publishedAt: string;
+    updatedAt: string;
+  };
+};
+
+export type T_OrdersMeta = {
+  pagination: T_Pagination;
+};
+
+export type T_OrdersResponse = {
+  data: T_Order[];
+  meta: T_OrdersMeta;
+};
